@@ -34,18 +34,19 @@ public class MainServiceDeque {
         MyDeque<String> history = new MyDeque<>();
         Scanner scanner = new Scanner(System.in);
         String input;
-
-        while (true) {
-            System.out.println("Enter a URL or '1' to print and remove the first URL:");
+        boolean running = true;
+        while (running) {
+            System.out.println("Enter a URL or '1' to print and remove the first URL, '2' to stop ruinning:");
             input = scanner.nextLine();
-
-            if (input.equals("1")) {
+            if (input.equals("2")) {
+                running = false;
+            } else if (input.equals("1")) {
                 if (!history.isEmpty()) {
                     System.out.println("First URL: " + history.removeFront());
                 } else {
                     System.out.println("No URLs in history.");
                 }
-            } else if (isValidURL(input)) {
+            } else if ((input != null && input.matches("^(www)\\.[a-zA-Z0-9-_]+\\.[a-zA-Z0-9-_]+"))) {
                 if (history.isFull()) {
                     history.removeRear();
                 }
