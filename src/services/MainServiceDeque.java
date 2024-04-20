@@ -4,8 +4,7 @@ import datastr.MyDeque;
 import model.Student;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 public class MainServiceDeque {
     public static void main(String[] args) {
@@ -46,7 +45,7 @@ public class MainServiceDeque {
                 } else {
                     System.out.println("No URLs in history.");
                 }
-            } else if ((input != null && input.matches("^(www)\\.[a-zA-Z0-9-_]+\\.[a-zA-Z0-9-_]+"))) {
+            } else if (input.matches("^(www)\\.[a-zA-Z0-9-_]+\\.[a-zA-Z0-9-_]+")) {
                 if (history.isFull()) {
                     history.removeRear();
                 }
@@ -57,15 +56,6 @@ public class MainServiceDeque {
             System.out.println("Browser history:" );
             history.print();
         }
-
-    }
-
-    public static boolean isValidURL(String url) {
-        if(url != null &&
-                url.matches("^(www)\\.[a-zA-Z0-9-_]+\\.[a-zA-Z0-9-_]+"))
-            return true;
-        else
-            return false;
 
     }
 }
