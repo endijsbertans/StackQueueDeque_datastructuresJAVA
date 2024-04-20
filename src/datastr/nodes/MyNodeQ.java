@@ -4,14 +4,14 @@ public class MyNodeQ<Ttype> {
     private Ttype element;
     private MyNodeQ<Ttype> next;
     private MyNodeQ<Ttype> previous;
-    public MyNodeQ(Ttype value) {
-        this.element = value;
+    public MyNodeQ(Ttype element) {
+        this.element = element;
     }
     public Ttype getElement() {
         return element;
     }
-    public void setElement(Ttype value) {
-        this.element = value;
+    public void setElement(Ttype element) {
+        this.element = element;
     }
     public MyNodeQ<Ttype> getNext() {
         return next;
@@ -28,6 +28,6 @@ public class MyNodeQ<Ttype> {
     }
     @Override
     public String toString() {
-        return String.valueOf(element);
+        return element.toString();
     }
 }
